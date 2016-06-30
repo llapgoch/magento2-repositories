@@ -15,3 +15,5 @@ In your project root
 `bin/magento module:enable Training_Repository`
 
 `bin/magento setup:upgrade`
+
+Go to <url>/training_repository
