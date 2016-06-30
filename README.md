@@ -1,6 +1,6 @@
 To install;
 
-`cd` to your app/code directory then run
+`cd` to your app/code directory then run  (you may have to create the ``code`` directory)
 
 `mkdir -p Training/Repository && cd Training/Repository`
 
