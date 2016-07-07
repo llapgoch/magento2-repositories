@@ -3,12 +3,37 @@
 namespace Training\Repository\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
+use Training\Repository\Api\TrainingRepositoryInterface;
+use Training\Repository\Model\Training;
 
 class Index extends Action
 {
+    protected $_training;
+    protected $_trainingRepository;
+
+    public function __construct(
+        \Magento\Framework\App\Action\Context $context,
+        Training $trainingModel,
+        TrainingRepositoryInterface $trainingRepository)
+    {
+        parent::__construct($context);
+
+        $this->_training = $trainingModel;
+        $this->_trainingRepository = $trainingRepository;
+    }
+
     public function execute()
     {
-        // TODO: Implement execute() method.
-        die('Put your lovely stuff here');
+
+
+
+//        $obj = $this->_training->load(1);
+//
+//
+        $collection = $this->_trainingRepository->getList();
+
+        foreach($collection as $item){
+            var_dump($item->getTitle());
+        }
     }
 }
